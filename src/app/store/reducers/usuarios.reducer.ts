@@ -4,9 +4,10 @@ import {
   cargarUsuariosSuccess,
   cargarUsuariosError,
 } from '../actions';
+import { Usuario } from '../../models/usuario.models';
 
 export interface UsuariosState {
-  users: any[];
+  users: Usuario[];
   loaded: boolean;
   loading: boolean;
   error: any;
@@ -39,3 +40,7 @@ const _usuariosReducer = createReducer(
     }, */,
   }))
 );
+
+export function usuariosReducer(state: any, action: any) {
+  return _usuariosReducer(state, action);
+}
